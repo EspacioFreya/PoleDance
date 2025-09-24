@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Espacio Freya – Pole & Dance | Pronto nueva apertura en La Florida</title>
+  <meta name="description" content="Nueva Academia de Pole Dance en La Florida. Clases de Pole Sport y Pole Exotic con instructoras e instructores. Inscríbete y asegura tu cupo antes de la apertura." />
+  <meta name="theme-color" content="#0e3b40" />
+
+<link rel="icon" href="https://github.com/CarolinaRuzC/Freya/blob/main/logo-freya.png" type="image/png" sizes="any" />
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:title" content="Espacio Freya – Pole & Dance" />
+  <meta property="og:description" content="Clases de Pole Sport y Pole Exotic en La Florida. Cupos limitados – inscríbete hoy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tu-dominio-o-github-pages" />
+  <style>
+    :root{
+      --bg:#0e3b40;          /* verde petróleo del logo */
+      --panel:#0a2f33;       /* panel más oscuro */
+      --text:#f4f7f6;        /* texto principal (blanco suave) */
+      --muted:#b2c2bd;       /* texto secundario */
+      --accent:#c9a227;      /* dorado Freya */
+      --accent-2:#ffffff;    /* blanco para contrastes */
+      --danger:#d9534f;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(201,162,39,.12), transparent 60%),
+                  radial-gradient(800px 500px at 0% 10%, rgba(201,162,39,.14), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header */
+header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:saturate(120%) blur(8px);
+  background:rgba(11,19,16,.75);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.wrap{max-width:1100px; margin:auto; padding:0 20px}
+.nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+.brand{display:flex; align-items:center; gap:12px}
+.logo-img{width:40px;height:40px;object-fit:contain;filter: drop-shadow(0 6px 16px rgba(0,0,0,.35))}
+.brand h1{font-size:18px; margin:0; letter-spacing:.3px}
+.menu{display:flex; gap:18px}
+.menu a{color:var(--text); opacity:.9}
+.menu a.active, .menu a:hover{color:var(--accent-2)}
+.mobile{display:none}   /* ← AQUÍ */
+.burger{display:none; background:none; border:0; color:var(--text); font-size:22px}
+
+
+    /* Hero */
+    .hero{padding:72px 0 48px}
+    .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center}
+    .tag{display:inline-flex; align-items:center; gap:8px; font-size:12px; padding:6px 10px; border:1px solid rgba(255,255,255,.1); border-radius:999px; color:var(--muted)}
+    h2{font-size:40px; line-height:1.15; margin:12px 0 10px}
+    .lead{color:var(--muted); margin:0 0 18px}
+    .cta{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:999px; border:1px solid rgba(255,255,255,.1); background:linear-gradient(180deg, rgba(201,162,39,.18), rgba(201,162,39,.06)); color:var(--text)}
+    .btn:hover{filter:brightness(1.08)}
+    .btn.alt{background:linear-gradient(180deg, rgba(201,162,39,.22), rgba(201,162,39,.08));}
+
+    .card{background:var(--panel); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); box-shadow:var(--shadow)}
+    .card.pad{padding:20px}
+
+    /* Sections */
+    section{padding:40px 0}
+    h3{font-size:28px; margin:0 0 6px}
+    .sub{color:var(--muted); margin:0 0 18px}
+
+    /* Grid helpers */
+    .grid{display:grid; gap:18px}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+
+    /* Features / Clases */
+    .feature{padding:18px}
+    .feature h4{margin:6px 0 6px}
+
+    /* Pricing */
+    .price{display:flex; align-items:baseline; gap:6px}
+    .price strong{font-size:28px}
+    .plan ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+
+    /* Schedule */
+    table{width:100%; border-collapse:collapse; overflow:hidden; border-radius:12px; background:rgba(255,255,255,.02)}
+    th, td{padding:12px 10px; border-bottom:1px solid rgba(255,255,255,.06)}
+    th{text-align:left; color:var(--muted); font-weight:600; background:rgba(255,255,255,.03)}
+    tr:hover td{background:rgba(201,162,39,.06)}
+
+    /* Contact */
+    form{display:grid; gap:10px}
+    input, textarea{width:100%; background:#0e1814; border:1px solid rgba(255,255,255,.1); border-radius:10px; color:var(--text); padding:12px}
+    input::placeholder, textarea::placeholder{color:#8ea39a}
+    .note{font-size:12px; color:var(--muted)}
+
+    /* Footer */
+    footer{padding:28px 0; color:var(--muted); border-top:1px solid rgba(255,255,255,.06)}
+
+    /* Responsive */
+@media (max-width: 900px){
+  .hero-grid{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+  .menu{display:none}      /* oculta el menú de escritorio en móvil */
+  .burger{display:inline-flex}
+  .mobile{display:none; flex-direction:column; gap:10px; padding:10px 0}
+  .mobile a{padding:10px 0; border-bottom:1px solid rgba(255,255,255,.06)}
+}
+
+    
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#inicio" aria-label="Inicio">
+        <span class="logo" aria-hidden="true">
+          <!-- Mini símbolo Freya (gato + runa en SVG simple) -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 12c0-3 2-5 5-5s5 2 5 5-2 5-5 5S4 15 4 12Z"></path>
+            <path d="M14 6l6 6-6 6"></path>
+          </svg>
+        </span>
+        <h1>Espacio Freya – Pole & Dance</h1>
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a href="#clases">Clases</a>
+        <a href="#planes">Planes</a>
+        <a href="#horarios">Horarios</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+          <button class="burger" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+        </div>
+        <div class="wrap">
+        <nav id="mobileMenu" class="mobile" aria-label="Móvil">
+        <a href="#clases\" onclick="toggleMenu(false)">Clases</a>
+        <a href="#horarios" onclick="toggleMenu(false)">Horarios</a>
+        <a href="#ubicacion" onclick="toggleMenu(false)">Ubicación</a>
+        <a href="#contacto" onclick="toggleMenu(false)">Contacto</a>
+        </nav>
+    </div>
+  </header>
+
+  <main id="inicio" class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="tag">✨ Espacio Freya – Pole & Dance ✨<br>
+            Un lugar inspirado en la diosa Freya, donde mujeres y hombres encuentran fuerza, libertad y arte en cada clase de pole dance.
+            Inclusión, respeto y motivación para que descubras tu poder y celebres el equilibrio entre disciplina y sensualidad.</span>
+          <h2>Clases de Pole Sport & Pole Exotic en La Florida</h2>
+          <p class="lead">Nueva academia con instructoras e instructores. Cupos limitados: inscríbete antes de la apertura y asegura tu lugar.</p>
+          <div class="cta">
+            <a class="btn alt" href="#contacto">Inscribirme</a>
+            <a class="btn" href="https://instagram.com/espaciofreya_poledance" target="_blank" rel="noopener">Instagram @espaciofreya_poledance</a>
+          </div>
+        </div>
+        <div class="card pad">
+          <h3 style="margin:0 0 8px">Próxima apertura</h3>
+          <p class="sub" style="margin:0">Paso el Roble #40, La Florida · Santiago</p>
+          <ul style="margin:12px 0 0; padding-left:18px; color:var(--muted)">
+            <li>Ambiente inclusivo: alumnas y alumnos bienvenidos 🤝</li>
+            <li>Grupos reducidos (máx. 8 por clase)</li>
+            <li>Espejo de muro completo, iluminación cálida</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLASES -->
+    <section id="clases">
+      <h3>Nuestras clases</h3>
+      <p class="sub">Entrena técnica, fuerza y expresión en dos líneas de aprendizaje complementarias.</p>
+      <div class="grid grid-2">
+        <article class="card feature">
+          <h4>Pole Sport</h4>
+          <p>Enfoque técnico y de acondicionamiento: agarres, giros, inversiones y combos progresivos. Ideal para todos los niveles.</p>
+          <ul class="note">
+            <li>Calentamiento funcional y movilidad</li>
+            <li>Trabajo de fuerza y progresiones seguras</li>
+          </ul>
+        </article>
+        <article class="card feature">
+          <h4>Pole Exotic</h4>
+          <p>Fusión de pole, floorwork y estilo coreográfico. Mejora fluidez, musicalidad y presencia escénica.</p>
+          <ul class="note">
+            <li>Transiciones al suelo y líneas estéticas</li>
+            <li>Rutinas por bloques con énfasis expresivo</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PLANES / PRECIOS -->
+    <section id="planes">
+      <h3>Planes y precios</h3>
+      <p class="sub">Valor de matrícula: $15.000 con 33% de descuento a las primeras 50 personas, antes de aperturar la academia. Puedes reservar tu cupo hoy.</p>
+      <div class="grid grid-3">
+        <article class="card pad plan">
+          <h4>Plan 4 clases / mes</h4>
+          <div class="price"><strong>$30.000</strong><span class="note">CLP</span></div>
+          <ul>
+            <li>1 clase por semana</li>
+            <li>Válido 30 días</li>
+          </ul>
+        </article>
+        <article class="card pad plan">
+          <h4>Plan 8 clases / mes</h4>
+          <div class="price"><strong>$50.000</strong><span class="note">CLP</span></div>
+          <ul>
+            <li>2 clases por semana</li>
+            <li>Válido 30 días</li>
+          </ul>
+        </article>
+        <article class="card pad plan">
+          <h4>Plan 12 clases / mes</h4>
+          <div class="price"><strong>$70.000</strong><span class="note">CLP</span></div>
+          <ul>
+            <li>3 clases por semana</li>
+            <li>Válido 30 días</li>
+          </ul>
+        </article>
+      </div>
+      <p class="note" style="margin-top:8px">* Valores referenciales. Puedes ajustar fácilmente estos montos en el HTML.</p>
+    </section>
+
+    <!-- HORARIOS -->
+    <section id="horarios">
+      <h3>Horarios (Lun–Vie)</h3>
+      <p class="sub">Cupos reducidos (hasta 8 por clase). Elige tu bloque fijo mensual.</p>
+      <div class="card pad">
+        <div style="overflow:auto">
+          <table aria-label="Tabla de horarios semanales">
+            <thead>
+              <tr>
+                <th>Hora</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>18:00–19:00</td>
+                <td>Pole Sport<br><span class="note"></span></td>
+                <td>Pole Sport<br><span class="note"></span></td>
+                <td>Pole Sport<br><span class="note"></span></td>
+                <td>Pole Sport<br><span class="note"></span></td>
+                <td>Pole Sport<br><span class="note"></span></td>
+              </tr>
+              <tr>
+                <td>19:00–20:00</td>
+                <td>Pole Sport<br><span class="note"></span></td>
+                <td>Pole Exotic<br><span class="note"></span></td>
+                <td>Pole Sport<br><span class="note"></span></td>
+                <td>Pole Exotic<br><span class="note"></span></td>
+                <td>Pole Sport<br><span class="note"></span></td>
+              </tr>
+              <tr>
+                <td>20:00–21:00</td>
+                <td>Pole Exotic<br><span class="note"></span></td>
+                <td>Pole Sport<br><span class="note"></span></td>
+                <td>Pole Exotic<br><span class="note"></span></td>
+                <td>Pole Sport<br><span class="note"></span></td>
+                <td>Pole Exotic<br><span class="note"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section id="ubicacion">
+      <h3>Ubicación</h3>
+      <p class="sub">Paso el Roble #40, comuna de La Florida · Santiago</p>
+      <div class="grid grid-2">
+        <div class="card pad">
+          <p>Estamos cerca del metro Bellavista de la FLorida y Medotro Mirador y con acceso expedito. Escríbenos por WhatsApp para indicaciones:</p>
+          <p><a class="btn alt" href="https://wa.me/56945395243" target="_blank" rel="noopener">Hablar por WhatsApp</a></p>
+          <p class="note">O búscanos en Google Maps: <a href="https://maps.google.com/?q=Paso%20el%20Roble%2040,%20La%20Florida" target="_blank" rel="noopener">Paso el Roble 40, La Florida</a></p>
+        </div>
+        <div class="card pad">
+          <h4>¿Qué traer a tu primera clase?</h4>
+          <ul>
+            <li>Ropa cómoda para clases de pole sport (top y shorts)</li>
+            <li>Ropa cómoda para clases de pole exotic (polera, calzas o short, rodilleras, tacones (no son obligatorios) )</li>
+            <li>Toalla pequeña y agua</li>
+            <li>Muchas ganas de aprender 💪</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <h3>Reserva tu cupo</h3>
+      <p class="sub">Déjanos tus datos y te contactamos. También puedes escribir al Instagram <a href="https://instagram.com/espaciofreya_poledance" target="_blank" rel="noopener">@espaciofreya_poledance</a>.</p>
+      <div class="card pad">
+        <form onsubmit="sendEmail(event)">
+          <label>
+            Nombre
+            <input required name="nombre" placeholder="Tu nombre" />
+          </label>
+          <label>
+            Email
+            <input type="email" required name="email" placeholder="tucorreo@ejemplo.com" />
+          </label>
+          <label>
+            Plan de interés
+            <input name="plan" placeholder="4 / 8 / 12 clases" />
+          </label>
+          <label>
+            Mensaje
+            <textarea name="mensaje" rows="4" placeholder="Quiero reservar para Pole Sport los martes 19:00…"></textarea>
+          </label>
+          <div class="cta">
+            <button class="btn alt" type="submit">Enviar</button>
+            <span id="formMsg" class="note" role="status" aria-live="polite"></span>
+          </div>
+          <p class="note">Este formulario usa <strong>mailto:</strong> para no requerir backend (hosting $0). Si prefieres, podemos integrarlo con Google Forms o Formspree más adelante.</p>
+        </form>
+      </div>
+    </section>
+    <!-- MAPA -->
+<section id="mapa">
+<h3>Cómo llegar</h3>
+<p class="sub">Paso el Roble #40, La Florida · Santiago</p>
+<div class="card" style="overflow:hidden">
+<iframe class="map-embed"
+src="https://www.google.com/maps?q=Paso%20el%20Roble%2040%2C%20La%20Florida%2C%20Chile&output=embed"
+loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+title="Mapa: Paso el Roble 40, La Florida">
+</iframe>
+</div>
+<p class="note">¿Prefieres abrirlo en tu app? <a href="https://maps.google.com/?q=Paso%20el%20Roble%2040,%20La%20Florida" target="_blank" rel="noopener">Ver en Google Maps</a></p>
+</section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap">
+        <span>© <span id="year"></span> Espacio Freya – Pole & Dance</span>
+        <span>IG: <a href="https://instagram.com/espaciofreya_poledance" target="_blank" rel="noopener">@espaciofreya_poledance</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(force){
+      const el = document.getElementById('mobileMenu');
+      const show = typeof force === 'boolean' ? force : el.style.display !== 'flex';
+      el.style.display = show ? 'flex' : 'none';
+    }
+    // mailto sender (sin backend)
+    function sendEmail(e){
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const nombre = encodeURIComponent(fd.get('nombre')||'');
+      const email = encodeURIComponent(fd.get('email')||'');
+      const plan = encodeURIComponent(fd.get('plan')||'');
+      const mensaje = encodeURIComponent(fd.get('mensaje')||'');
+      const subject = `Reserva: ${plan||'consulta'} – ${nombre}`;
+      const body = `Nombre: ${nombre}%0D%0AEmail: ${email}%0D%0APlan: ${plan}%0D%0A%0D%0AMensaje:%0D%0A${mensaje}`;
+      const mailto = `mailto:espaciofreya@ejemplo.com?subject=${subject}&body=${body}`;
+      document.getElementById('formMsg').textContent = 'Abriendo tu cliente de correo…';
+      window.location.href = mailto;
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
