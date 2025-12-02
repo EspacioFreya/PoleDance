@@ -99,11 +99,39 @@ header{
     tr:hover td{background:rgba(201,162,39,.06)}
 
     /* Contact */
-    form{display:grid; gap:10px}
+    /*form{display:grid; gap:10px}
     input, textarea{width:100%; background:#0e1814; border:1px solid rgba(255,255,255,.1); border-radius:10px; color:var(--text); padding:12px}
     input::placeholder, textarea::placeholder{color:#8ea39a}
     .note{font-size:12px; color:var(--muted)}
-
+*/
+    <form
+  action="https://formspree.io/f/xxxxxxxx" 
+  method="POST" 
+  target="_blank" 
+  onsubmit="setTimeout(() => { document.getElementById('formMsg').textContent = '¡Gracias por tu mensaje! Te contactaremos pronto.'; }, 100); return true;"
+>
+    <label>
+      Nombre
+      <input required name="nombre" placeholder="Tu nombre" />
+    </label>
+    <label>
+      Email
+      <input type="email" required name="_replyto" placeholder="tucorreo@ejemplo.com" />
+    </label>
+    <label>
+      Plan de interés
+      <input name="Plan de interés" placeholder="4 / 8 / 12 clases" />
+    </label>
+    <label>
+      Mensaje
+      <textarea name="Mensaje" rows="4" placeholder="Quiero reservar para Pole Sport los martes 19:00…"></textarea>
+    </label>
+    <div class="cta">
+      <button class="btn alt" type="submit">Enviar Solicitud</button>
+      <span id="formMsg" class="note" role="status" aria-live="polite"></span>
+    </div>
+    <p class="note"><strong>¡IMPORTANTE!</strong> Configura tu formulario en Formspree/Web3Forms para recibir los datos en tu correo.</p>
+</form>
     /* Footer */
     footer{padding:28px 0; color:var(--muted); border-top:1px solid rgba(255,255,255,.06)}
 
@@ -375,8 +403,8 @@ header{
       const show = typeof force === 'boolean' ? force : el.style.display !== 'flex';
       el.style.display = show ? 'flex' : 'none';
     }
-    // mailto sender (sin backend)
-    function sendEmail(e){
+   // mailto sender (sin backend)
+  /*  function sendEmail(e){
       e.preventDefault();
       const fd = new FormData(e.target);
       const nombre = encodeURIComponent(fd.get('nombre')||'');
@@ -388,7 +416,7 @@ header{
       const mailto = `mailto:espaciofreya@ejemplo.com?subject=${subject}&body=${body}`;
       document.getElementById('formMsg').textContent = 'Abriendo tu cliente de correo…';
       window.location.href = mailto;
-    }
+    }*/
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
